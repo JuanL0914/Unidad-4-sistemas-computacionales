@@ -127,7 +127,10 @@
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\ctype.h",
             "c:\\program files\\microsoft visual studio\\18\\enterprise\\vc\\tools\\msvc\\14.51.36231\\include\\clocale",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\locale.h",
-            "c:\\program files\\microsoft visual studio\\18\\enterprise\\vc\\tools\\msvc\\14.51.36231\\include\\ostream"
+            "c:\\program files\\microsoft visual studio\\18\\enterprise\\vc\\tools\\msvc\\14.51.36231\\include\\ostream",
+            "c:\\users\\b09s112est\\documents\\unidad-4-sistemas-computacionales\\unidad 4 proyect\\external\\glad\\include\\glad\\glad.h",
+            "c:\\users\\b09s112est\\documents\\unidad-4-sistemas-computacionales\\unidad 4 proyect\\external\\glad\\include\\khr\\khrplatform.h",
+            "c:\\users\\b09s112est\\documents\\unidad-4-sistemas-computacionales\\unidad 4 proyect\\external\\glfw34\\include\\glfw\\glfw3.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
