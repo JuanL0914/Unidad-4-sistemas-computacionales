@@ -29,3 +29,4 @@
 ```GLFW``` prepara el lienzo, ```GLAD``` consigue las herramientas modernas desde los drivers, ```opengl32.lib``` se conecta con Windows y ```GLM```aporta en las matematicas.
 
 # Actividad 3
+ddgftsdfg
