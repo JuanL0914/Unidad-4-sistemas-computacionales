@@ -36,17 +36,26 @@
 ### Diferencia entre GPU y CPU
 - La ```CPU``` tiene poco nucleos, bastante potentes y flexibles, realiza tareas complejas una tras otra (o pocas a la vez), como la logica del programa, el sistema operativo o la IA de algun juego.
 - La ```GPU``` tiene miles de nucleos pequeños y simples. Hace la misma operacion sobre muchisimos datos al mismo tiempo.
-- #### ¿Porque sirve para graficos?
+- **¿Porque sirve para graficos?**
 sirve para pintar una imagen, calcular el color de millones de pixeles, y cada uno se calcula de forma independiente con la misma formula.
 
-- #### Analisis del video 
+-  **Analisis del video** 
 la CPU es un cañon de paintball que dispara un tiro preciso a la vez. La GPU es un cañon gigante que dispara miles de bolas de pintura al mismo tiempo y pinta la imagen completa de golpe.
 
 ## Parte 2:
 #### 1. ¿Cuáles son los tres pasos claves del pipeline de OpenGL? Explica en tus propias palabras cuál es el objetivo de cada paso.
+- **Vertex Processing**: Los vertices pasan por el vertex shader y se transforman a su posicion final en la pantalla.
 
+- **Raterizacion**: los triangulos se convierten en fragmentos.
+
+- **Fragment Processing**: El fragment shader calcula el color de cada fragmento
 
 #### 2. La gran novedad que introduce OpenGL moderno es el pipeline programable. ¿Qué significa esto? ¿Qué diferencia hay entre el pipeline fijo y el programable? ¿Qué ventajas le ves a esto? y si el pipeline es programable, ¿Qué tengo que programar?
+- En el fijo (legacy) las etapas venienen cerradas y solo cambiaba parametros. 
+- en el programable uno escribe el codigo de ciertas etapas.
+- Ventaja control total de efectos e iluminacion.
+- lo que programa como minimo el vertex shader y el fragment shader.
+
 
 
 #### 3. Si fueras a describir el proceso de **rasterización** ¿Qué dirías?
