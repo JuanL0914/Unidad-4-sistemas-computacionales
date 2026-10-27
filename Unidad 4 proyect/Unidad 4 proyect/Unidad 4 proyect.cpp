@@ -69,7 +69,7 @@ unsigned int buildShaderProgram() {
 	glGetProgramiv(prog, GL_LINK_STATUS, &success);
 	if (!success) {
 		glGetProgramInfoLog(prog, 512, nullptr, log);
-		std::cerr << "ERROR LINKING PROGRAM:\n" << log << "\n";
+		std::cerr << "ERROR LINKING PROGRAM:\n" << log << "\n"; 
 	}
 
 	glDeleteShader(vs);
