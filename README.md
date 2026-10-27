@@ -59,16 +59,17 @@ la CPU es un cañon de paintball que dispara un tiro preciso a la vez. La GPU es
 
 
 #### 3. Si fueras a describir el proceso de **rasterización** ¿Qué dirías?
-
+Es un proceso que toma un triangulo definido por vertices y determina que pixeles de la pantalla cubre, genrando un fragmento por cada uno.
 
 #### 4. ¿Qué son los fragmentos? ¿Es lo mismo un fragmento que un pixel? ¿Por qué?
-
+Son los datos a ser un pixel (posicion,profundidad,color).
+No es lo mismo que un pixel un fragmento puede descartarse (por el depth test) o mezclarse con otros antes de convertirse eb un pixel final.
 
 #### 5. Explica qué problema resuelve el **Z-buffer** y ¿Qué es el depth test?
-
+resuelve que objeto queda al frente. Guarda la profundidad de cada pixel y si un fragmento nuevo esta mas lejos que el guardado, se descarta.
 
 #### 6. ¿Por qué se presenta el problema de la **aliasing**? ¿Qué es el anti-aliasing?
-
+los pixerles son cuadrados y los bordes diagonales
 
 #### 7. ¿Qué relación hay entre la iluminación y el fragment shader? Siempre es necesario tener en cuenta la iluminación en un fragment shader? o puedo hacer un fragment shader sin iluminación? Explica que implicaciones tiene esto.
 
