@@ -56,8 +56,6 @@ la CPU es un cañon de paintball que dispara un tiro preciso a la vez. La GPU es
 - Ventaja control total de efectos e iluminacion.
 - lo que programa como minimo el vertex shader y el fragment shader.
 
-
-
 #### 3. Si fueras a describir el proceso de **rasterización** ¿Qué dirías?
 Es un proceso que toma un triangulo definido por vertices y determina que pixeles de la pantalla cubre, genrando un fragmento por cada uno.
 
@@ -72,6 +70,28 @@ resuelve que objeto queda al frente. Guarda la profundidad de cada pixel y si un
 los pixeles son cuadrados y los bordes diagonales
 
 #### 7. ¿Qué relación hay entre la iluminación y el fragment shader? Siempre es necesario tener en cuenta la iluminación en un fragment shader? o puedo hacer un fragment shader sin iluminación? Explica que implicaciones tiene esto.
-
+**Iluminación y fragment shader**: la iluminacion suele calcularse ahi, porque es donde se decide el color final. No es obligatoria: puedes devolver un color fijo, como en el triangulo naranja. Implicacion: sin iluminacion se ve plano, sin sensacion de volumen.
 
 #### 8. ¿Qué implica para la GPU que una aplicación tenga múltiples fuentes de iluminación?
+**Multiples luces**: la GPU debe repetir el calculo de iluminacion por cada luz, en cada fragmento. Mas luces igual a  mas costo de computo y menor rendimiento.
+
+## Parte 3:
+ #### 1. Qué se necesita para dibujar un triángulo en OpenGL
+- Una Ventana y contexto ```OpenGL``` activo ```GLFW``` y las funciones cargadas ```GLAD```
+- Los datos de los vertices: 3 posiciones en coordenadas ```NDC``` (-1 y 1).
+- Un ```VBO```: buffer en la GPU que guarda los datos (```glGenBuffers, glBindBuffer, glBufferData```).
+- Un ```VAO```: guarda como leer el VBO (```glVertexAttribPointer, glEnableVertexAttribArray```).
+- Un shader program (vertex + fragment).
+- En el ciclo de render: (```glUseProgram, glBindVertexArray y glDrawArrays(GL_TRIANGLES, 0, 3```).
+
+#### 2. Qué se necesita para usar un shader
+- Escribir el codigo ```GLSL``` de cada shader (```vertex y fragment```).
+- Crear y compilar cada shader (```glCreateShader, glShaderSource, glCompileShader```) y verificar errores.
+- Crear un programa, adjuntarle los shaders y enlazarlo (```glCreateProgram, glAttachShader, glLinkProgram`` ), tambien verificando errores.
+- Eliminar los shaders sueltos, porque ya estan dentro del programa.
+- Activarlo con ```glUseProgram``` antes de dibujar.
+
+## Parte 4:
+![alt text](image-1.png)
+### Prediccion
+C se hace diminuto y no, se ve bien. Los offsets son (0.1, 0.5), (0.2, 0.5) y (0.15, 0.75), asi que ocupan el cuadrante superior derecho. Se ve angosto porque el triangulo mide solo 0.1 de ancho en NDC.
