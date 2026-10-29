@@ -22,16 +22,21 @@ const unsigned int SCR_HEIGHT = 400;
 const char* vertexShaderSrc = R"glsl(
     #version 460 core
     layout(location = 0) in vec3 aPos;
+    uniform vec2 offset;
     void main() {
-        gl_Position = vec4(aPos, 1.0);
+        gl_Position = vec4(aPos.x + offset.x, aPos.y + offset.y, aPos.z, 1.0);
     }
 )glsl";
 
 const char* fragmentShaderSrc = R"glsl(
     #version 460 core
     out vec4 FragColor;
+    uniform float time;
     void main() {
-        FragColor = vec4(1.0, 0.5, 0.2, 1.0);
+        float r = (sin(time) + 1.0) / 2.0;
+        float g = (sin(time + 2.0) + 1.0) / 2.0;
+        float b = (sin(time + 4.0) + 1.0) / 2.0;
+        FragColor = vec4(r, g, b, 1.0);
     }
 )glsl";
 
@@ -69,7 +74,7 @@ unsigned int buildShaderProgram() {
 	glGetProgramiv(prog, GL_LINK_STATUS, &success);
 	if (!success) {
 		glGetProgramInfoLog(prog, 512, nullptr, log);
-		std::cerr << "ERROR LINKING PROGRAM:\n" << log << "\n"; 
+		std::cerr << "ERROR LINKING PROGRAM:\n" << log << "\n";
 	}
 
 	glDeleteShader(vs);
@@ -110,7 +115,7 @@ int main()
 	// 2) Crear ventana
 	GLFWwindow* mainWindow = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Ventana", nullptr, nullptr);
 	if (!mainWindow) {
-		std::cerr << "Error creando ventana1\n";
+		std::cerr << "Error creando ventana\n";
 		glfwTerminate();
 		return -1;
 	}
@@ -127,7 +132,7 @@ int main()
 	glfwMakeContextCurrent(mainWindow);
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-		std::cerr << "Fallo al cargar GLAD (contexto1)\n";
+		std::cerr << "Fallo al cargar GLAD\n";
 		return -1;
 	}
 
@@ -143,6 +148,9 @@ int main()
 	// 9) Configura el viewport
 	glViewport(0, 0, bufferWidth, bufferHeight);
 
+	glUseProgram(shaderProg);
+	int offsetLocation = glGetUniformLocation(shaderProg, "offset");
+	int timeLocation = glGetUniformLocation(shaderProg, "time");
 
 	// 10) Loop principal
 	while (!glfwWindowShouldClose(mainWindow))
@@ -158,8 +166,23 @@ int main()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
+		double xpos, ypos;
+		glfwGetCursorPos(mainWindow, &xpos, &ypos);
+
+		int w, h;
+		glfwGetWindowSize(mainWindow, &w, &h);
+
+		float x = (float)xpos / w;
+		float y = (float)ypos / h;
+		if (x < 0) x = 0;
+		if (x > 1) x = 1;
+		if (y < 0) y = 0;
+		if (y > 1) y = 1;
+
 		// 14) Indica a OpenGL que use el shader program
 		glUseProgram(shaderProg);
+		glUniform1f(timeLocation, (float)glfwGetTime());
+		glUniform2f(offsetLocation, x * 2 - 1, 1 - y * 2);
 
 		// 15) Activa el VAO y dibuja el triángulo
 		glBindVertexArray(VAO);
