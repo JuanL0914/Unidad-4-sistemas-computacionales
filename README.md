@@ -69,7 +69,7 @@ No es lo mismo que un pixel un fragmento puede descartarse (por el depth test) o
 resuelve que objeto queda al frente. Guarda la profundidad de cada pixel y si un fragmento nuevo esta mas lejos que el guardado, se descarta.
 
 #### 6. ¿Por qué se presenta el problema de la **aliasing**? ¿Qué es el anti-aliasing?
-los pixerles son cuadrados y los bordes diagonales
+los pixeles son cuadrados y los bordes diagonales
 
 #### 7. ¿Qué relación hay entre la iluminación y el fragment shader? Siempre es necesario tener en cuenta la iluminación en un fragment shader? o puedo hacer un fragment shader sin iluminación? Explica que implicaciones tiene esto.
 
