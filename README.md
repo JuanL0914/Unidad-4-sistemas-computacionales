@@ -178,7 +178,7 @@ Podria usar el tiempo como uniform para mover el triangulo en circulo (`cos(time
 
 ### Defensa
 - Actividad 1: Logre realizar esta actividad facilmente
-- Actividad 2: Logre realizar un proyecto OPenGL a memoria con exito
+- Actividad 2: Logre realizar un proyecto OpenGL a memoria con exito
 - Actividad 3: Probe el viewport y glDrawArrays cambiando una linea y viendo que pasaba, y respondi las 12 preguntas.
 - Actividad 4: Respondi a las 8 preguntas del video y a la cpu vs gpu etc
 - Actividad 5: se me complico un poco pero Logre hacer la actividad con exito
