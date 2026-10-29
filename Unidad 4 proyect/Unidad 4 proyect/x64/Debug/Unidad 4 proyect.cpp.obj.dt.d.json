@@ -1,7 +1,7 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\user\\onedrive\\documentos\\estudio\\upb\\unidad-4-sistemas-computacionales-main\\unidad 4 proyect\\unidad 4 proyect\\unidad 4 proyect.cpp",
+        "Source": "c:\\users\\user\\onedrive\\documentos\\estudio\\upb\\unidad-4-sistemas-computacionales\\unidad 4 proyect\\unidad 4 proyect\\unidad 4 proyect.cpp",
         "ProvidedModule": "",
         "Includes": [
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\iostream",
@@ -128,9 +128,9 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\clocale",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\locale.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\ostream",
-            "c:\\users\\user\\onedrive\\documentos\\estudio\\upb\\unidad-4-sistemas-computacionales-main\\unidad 4 proyect\\external\\glad\\include\\glad\\glad.h",
-            "c:\\users\\user\\onedrive\\documentos\\estudio\\upb\\unidad-4-sistemas-computacionales-main\\unidad 4 proyect\\external\\glad\\include\\khr\\khrplatform.h",
-            "c:\\users\\user\\onedrive\\documentos\\estudio\\upb\\unidad-4-sistemas-computacionales-main\\unidad 4 proyect\\external\\glfw34\\include\\glfw\\glfw3.h"
+            "c:\\users\\user\\onedrive\\documentos\\estudio\\upb\\unidad-4-sistemas-computacionales\\unidad 4 proyect\\external\\glad\\include\\glad\\glad.h",
+            "c:\\users\\user\\onedrive\\documentos\\estudio\\upb\\unidad-4-sistemas-computacionales\\unidad 4 proyect\\external\\glad\\include\\khr\\khrplatform.h",
+            "c:\\users\\user\\onedrive\\documentos\\estudio\\upb\\unidad-4-sistemas-computacionales\\unidad 4 proyect\\external\\glfw34\\include\\glfw\\glfw3.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
